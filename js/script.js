@@ -41,3 +41,20 @@ const Gameboard = (() => {
 	// Return the methods to be exposed
 	return { getBoard, placeMark, resetBoard };
 })();
+
+
+// Factory function to create players
+
+function createPlayer(name, mark) {
+	let score = 0;
+
+	function getScore() {
+		return score;
+	};
+
+	function addWin() {
+		score++;
+	};
+
+	return { name, mark, getScore, addWin };
+};
