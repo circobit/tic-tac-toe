@@ -133,6 +133,15 @@ const GameController = (() => {
 		if (!success) {
 			return;
 		};
+		// Check if there's a winner
+		const winner = checkWin();
+		if (winner !== null) {
+			gameOver = true;
+			currentPlayer.addWin();
+			// Finish function execution
+			// since there is a winner
+			return;
+		};
 		// Set current player to be the next one
 		if (currentPlayer === playerOne) {
 			currentPlayer = playerTwo;
