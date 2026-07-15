@@ -1,4 +1,9 @@
 // Gameboard
+// It is defined using an IIFE (Immediately Invoked
+// Function Expression). It allows us to have one object
+// which values cannot be altered outside of the
+// methods defined within it. And since it's executed 
+// right away, it cannot be duplicated.
 
 const Gameboard = (() => {
 	const rows = 3;
@@ -35,6 +40,11 @@ const Gameboard = (() => {
 		// identified by empty strings.
 		if (board[row][column] === "") {
 			board[row][column] = mark;
+			// Return true if the mark is successfully
+			// placed. Otherwise, return false.
+			return true;
+		} else {
+			return false;
 		};
 	};
 
@@ -58,3 +68,78 @@ function createPlayer(name, mark) {
 
 	return { name, mark, getScore, addWin };
 };
+
+
+// Game controller
+// Its objective is to run the game 
+
+const GameController = (() => {
+	// Players
+	const playerOne = createPlayer("Player One", "X");
+	const playerTwo = createPlayer("Player Two", "O");
+	// Game state
+	let currentPlayer = playerOne;
+	let gameOver = false;
+
+	// Winning lines
+	const winningLines = [
+		// Three rows possibilities
+		[[0,0], [0,1], [0,2]],
+		[[1,0], [1,1], [1,2]],
+		[[2,0], [2,1], [2,2]],
+		// Three columns possibilities
+		[[0,0], [1,0], [2,0]],
+		[[0,1], [1,1], [2,1]],
+		[[0,2], [1,2], [2,2]],
+		// Two diagonal possibilities
+		[[0,0], [1,1], [2,2]],
+		[[0,2], [1,1], [2,0]]
+	];
+
+	// Function to check if there are winnings
+	function checkWin() {
+		// Get current board
+		const currentBoard = Gameboard.getBoard();
+		// Iterate through the winning lines 
+		for (let i = 0; i < winningLines.length; i++) {
+			// Get the line
+			const line = winningLines[i];
+			// Get the three coordinates of the line
+			const firstCoord  = line[0];
+			const secondCoord = line[1];
+			const thirdCoord  = line[2];
+			// Get the line in the currentBoard using the coordinates
+			// to check wether they hold the same mark and are not empty
+			const firstCell = currentBoard[firstCoord[0]][firstCoord[1]];
+			const secondCell = currentBoard[secondCoord[0]][secondCoord[1]];
+			const thirdCell  = currentBoard[thirdCoord[0]][thirdCoord[1]];
+			if (firstCell !== "" && firstCell === secondCell && secondCell === thirdCell) {
+				// Returning just true wouldn't say who won.
+				// So returning the value of one cell would directly tell 
+				// if there's a winner and who is at the same time.
+				return firstCell;
+			};
+		};
+		return null;
+	};
+
+	function playRound(row, column) {
+		if (gameOver) {
+			return;
+		};
+		const success = Gameboard.placeMark(row, column, currentPlayer.mark);
+		// Check wether the mark was successfully placed 
+		// (There wasn't another mark in that place already)
+		if (!success) {
+			return;
+		};
+		// Set current player to be the next one
+		if (currentPlayer === playerOne) {
+			currentPlayer = playerTwo;
+		} else {
+			currentPlayer = playerOne;
+		};
+	};
+
+	return { playRound };
+})();
