@@ -137,13 +137,14 @@ const GameController = (() => {
 
 	function playRound(row, column) {
 		if (gameOver) {
-			return;
+			return { status: "over" };
 		};
 		const success = Gameboard.placeMark(row, column, currentPlayer.mark);
 		// Check wether the mark was successfully placed 
 		// (There wasn't another mark in that place already)
+		// If the move is not valid, return 'invalid'
 		if (!success) {
-			return;
+			return { status: "invalid" };
 		};
 		// Check if there's a winner
 		const winner = checkWin();
