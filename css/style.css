@@ -217,4 +217,27 @@ body {
 	padding: 0 1rem;
 }
 
+
+/* Hover highlight */
+
+@media (hover: hover) {
+	.cell:hover {
+		background-color: #c9c3c5;
+		border: 1px solid #c9c3c5;
+		cursor: pointer;
+	}
+
+	.resetGame:hover {
+		background-color: #aee6cf;
+		border: 5px solid #aee6cf;
+		color: #dd4765;
+		cursor: pointer;
+	}
+
+	.changeName:hover {
+		cursor: pointer;
+		background-color: #E3D081;
+		border: 1px solid #E3D081;
+		color: black;
+	}
 }
