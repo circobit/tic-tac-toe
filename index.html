@@ -15,30 +15,32 @@
 		<div class="resetGame">Reset Game</div>
 
 		<div class="gameboard">
-			<div class="row" data-row="0">
-				<div class="cell" data-col="0"></div>
-				<div class="cell" data-col="1"></div>
-				<div class="cell" data-col="2"></div>
-			</div>
-			<div class="row" data-row="1">
-				<div class="cell" data-col="0"></div>
-				<div class="cell" data-col="1"></div>
-				<div class="cell" data-col="2"></div>
-			</div>
-			<div class="row" data-row="2">
-				<div class="cell" data-col="0"></div>
-				<div class="cell" data-col="1"></div>
-				<div class="cell" data-col="2"></div>
-			</div>
+			<div class="cell" data-col="0" id="cell1"></div>
+			<div class="cell" data-col="1" id="cell2"></div>
+			<div class="cell" data-col="2" id="cell3"></div>
+			<div class="cell" data-col="0" id="cell4"></div>
+			<div class="cell" data-col="1" id="cell5"></div>
+			<div class="cell" data-col="2" id="cell6"></div>
+			<div class="cell" data-col="0" id="cell7"></div>
+			<div class="cell" data-col="1" id="cell8"></div>
+			<div class="cell" data-col="2" id="cell9"></div>
 		</div>
 
-		<div class="score">
-			<div class="scoreTitle">SCORE</div>
-			<div id="player1"><span id="player1Name">Player 1</span><span id="player1Score">0</span></div>
-			<div id="player2"><span id="player2Name">Player 2</span><span id="player2Score">0</span></div>
+		<div class="roundResult">
+			<div class="roundResultTitle">ROUND RESULT</div>
+			<div class="roundResultValue"></div>
 		</div>
 
-		<div class="roundResult"></div>
+		<div class="scoreBoard">
+			<div class="scoreTitleContainer">
+				<div class="scoreTitle">SCORE</div>
+			</div>
+
+			<div class="playersPoints">
+				<div class="player" id="player1"><span id="player1Name">Player 1 </span><span id="player1Score">0</span></div>
+				<div class="player" id="player2"><span id="player2Name">Player 2 </span><span id="player2Score">0</span></div>
+			</div>
+		</div>
 
 	</div>
 </body>
