@@ -180,7 +180,7 @@ const GameController = (() => {
 		// Reset board
 		Gameboard.resetBoard();
 		// Set currentPlayer back to playerOne
-		currentPlayer = playerOne
+		currentPlayer = playerOne;
 		// Set gameOver back to false
 		gameOver = false;
 	};
