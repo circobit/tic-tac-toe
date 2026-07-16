@@ -204,7 +204,17 @@ body {
 	font-weight: bold;
 }
 
-.playersPoints {
-	display: flex;
-	gap: 1rem;
+#player1Score,
+#player2Score {
+	font-size: 2rem;
+}
+
+.changeName {
+	background-color: #82142a;
+	border: 1px solid #82142a;
+	border-radius: 15px;
+	font-size: 1rem;
+	padding: 0 1rem;
+}
+
 }
