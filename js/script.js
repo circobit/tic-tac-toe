@@ -48,8 +48,20 @@ const Gameboard = (() => {
 		};
 	};
 
+	// Function to check if the board is full
+	function isFull() {
+		for (let i = 0; i < rows; i++) {
+			for (let j = 0; j < columns; j++) {
+				if (board[i][j] === "") {
+					return false;
+				}
+			};
+		};
+		return true;
+	};
+
 	// Return the methods to be exposed
-	return { getBoard, placeMark, resetBoard };
+	return { getBoard, placeMark, resetBoard, isFull };
 })();
 
 
