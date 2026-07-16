@@ -172,5 +172,18 @@ const GameController = (() => {
 		return { status: "continue" };
 	};
 
-	return { playRound };
+	// Function to reset game
+	// The distinction here is that this doesn't reset the score,
+	// but grants the users the hability to start a new game
+	// while keeping their score
+	function resetGame() {
+		// Reset board
+		Gameboard.resetBoard();
+		// Set currentPlayer back to playerOne
+		currentPlayer = playerOne
+		// Set gameOver back to false
+		gameOver = false;
+	};
+
+	return { playRound, resetGame };
 })();
