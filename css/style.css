@@ -71,6 +71,16 @@ h1, h2, h3, h4, h5, h6 {
 /* Container */
 
 body {
-	background-color: rgb(57, 56, 56);
+	background-color: #54494B;
 	font-family: "Roboto";
+	display: flex;
+	justify-content: center;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	min-width: 60vw;
+	gap: 2rem;
 }
