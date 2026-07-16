@@ -167,8 +167,9 @@ body {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	background-color: #91C7B1;
+	background-color: #B33951;
 	border: 5px solid #B33951;
+	color: white;
 	border-radius: 15px;
 	width: 17rem;
 	height: 3rem;
