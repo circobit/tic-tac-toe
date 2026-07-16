@@ -186,11 +186,17 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background-color: #91C7B1;
+	background-color: #B33951;
 	border: 5px solid #B33951;
+	color: white;
 	border-radius: 15px;
 	width: 8rem;
-	height: 4rem;
+	height: 8rem;
+}
+
+.playersPoints {
+	display: flex;
+	gap: 1rem;
 }
 
 #player1Name,
