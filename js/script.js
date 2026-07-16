@@ -153,14 +153,23 @@ const GameController = (() => {
 			currentPlayer.addWin();
 			// Finish function execution
 			// since there is a winner
-			return;
+			return { status: "win", player:  currentPlayer.name };
 		};
-		// Set current player to be the next one
+		// If there is no winner, check wether the board
+		// is full to confirm wether there is a tie
+		if (Gameboard.isFull()) {
+			gameOver = true;
+			return { status: "tie" };
+		}
+		// If the game is not over, the move was valid
+		// Set current player to be the next one and
+		// return 'continue'
 		if (currentPlayer === playerOne) {
 			currentPlayer = playerTwo;
 		} else {
 			currentPlayer = playerOne;
 		};
+		return { status: "continue" };
 	};
 
 	return { playRound };
