@@ -48,3 +48,29 @@ h1, h2, h3, h4, h5, h6 {
   text-wrap: balance;
 }
 
+
+/* Fonts */
+
+@font-face {
+	font-family: "Roboto";
+	src: url("../fonts/Roboto-Regular.ttf") format("truetype");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Roboto";
+	src: url("../fonts/Roboto-Bold.ttf") format("truetype");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+
+/* Container */
+
+body {
+	background-color: rgb(57, 56, 56);
+	font-family: "Roboto";
+}
