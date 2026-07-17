@@ -303,3 +303,7 @@ cells.forEach(element => {
 // Listener to reset game after pressing the 'Reset Game' button
 const reserGameButton = document.getElementById("resetGame");
 reserGameButton.addEventListener('click', () => reset());
+
+// Listener to submit button to change player name
+const submitButton = document.getElementById("submitButton");
+submitButton.addEventListener('click', (event) => changeName(event));
