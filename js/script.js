@@ -280,12 +280,20 @@ function changeName(event) {
     if (!newName) {
 		return
 	};
+	// Get the next player and the old one
+    const nextPlayerCell = document.getElementById("nextPlayer");
+    const oldName = (player === "player1") ? GameController.playerOne.name : GameController.playerTwo.name;
     // Assign the name based on player
     if (player === "player1") {
         GameController.playerOne.name = newName;
     } else {
         GameController.playerTwo.name = newName;
     };
+	// If next player is the recently edited one, it gets updated
+    if (nextPlayerCell.textContent === oldName || (player === "player1" && nextPlayerCell.textContent === "Player One")) {
+        nextPlayerCell.textContent = newName;
+    }
+	// Reset
     renderPlayerNames();
     inputObj.value = "";
     document.getElementById("changeNameDialog").close();
