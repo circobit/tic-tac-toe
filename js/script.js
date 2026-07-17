@@ -214,3 +214,28 @@ function renderEndGame(result) {
 		resultValue.textContent = `${result.player} won!`;
 	};
 };
+
+// Function to play
+function play(event) {
+	// Get coordinates
+	let coord = event.target.dataset.col;
+	// Split string
+	coord = coord.split(",");
+	// Convert both strings to numbers
+	const row = +coord[0];
+	const column = +coord[1];
+	// Execute a play and store its result
+	const result = GameController.playRound(row, column);
+	// Check the result to know if it should do nothing (in case of 
+	// game over or invalid move), continue and show next player
+	// or stop and show that it's a tie or a win.
+	if (result.status === "over" || result.status === "invalid") {
+		return;
+	} else if (result.status === "win" || result.status === "tie") {
+		renderEndGame(result);
+	};
+	// If game is not finished and move is valid, render mark 
+	// in cell and update who's next
+	renderPlay(event.target, result.mark, result.nextPlayer);
+};
+
