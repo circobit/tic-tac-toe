@@ -229,6 +229,62 @@ body {
 }
 
 
+/* Dialog to change name */
+
+.changeNameForm {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+#closeButton {
+	background-color: #590e1d;
+	border: 1px solid #590e1d;
+	border-radius: 5px;
+	height: 1.5rem;
+	width: 1.5rem;
+	text-align: center;
+}
+
+#changeNameDialog {
+	padding: 1.5rem;
+	background-color: #82142a;
+	border: 1px solid #82142a;
+	border-radius: 15px;
+}
+
+#changeNameDialog[open] {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.closeButtonContainer {
+	display: flex;
+	justify-content: right;
+}
+
+.changeNameForm fieldset {
+	display: flex;
+	flex-direction: column;
+	border: none;
+	color: white;
+}
+
+.changeNameForm input {
+	border: 1px solid white;
+	border-radius: 10px;
+	padding-left: 1rem;
+}
+
+.changeNameForm button {
+	background-color: #590e1d;
+	border: 1px solid #590e1d;
+	border-radius: 10px;
+	color: white;
+}
+
+
 /* Hover highlight */
 
 @media (hover: hover) {
@@ -246,6 +302,14 @@ body {
 	}
 
 	.changeName:hover {
+		cursor: pointer;
+		background-color: #E3D081;
+		border: 1px solid #E3D081;
+		color: black;
+	}
+
+	#closeButton:hover,
+	#submitButton:hover {
 		cursor: pointer;
 		background-color: #E3D081;
 		border: 1px solid #E3D081;

@@ -46,15 +46,28 @@
 				<div class="player" id="player1">
 					<span id="player1Name">Player 1 </span>
 					<span id="player1Score">0</span>
-					<button class="changeName">Edit Name</button>
+					<button class="changeName" data-target="player1" popovertarget="changeNameDialog" onclick="changeNameDialog.showModal()">Edit Name</button>
 				</div>
 				<div class="player" id="player2">
 					<span id="player2Name">Player 2 </span>
 					<span id="player2Score">0</span>
-					<button class="changeName">Edit Name</button>
+					<button class="changeName" data-target="player2" popovertarget="changeNameDialog" onclick="changeNameDialog.showModal()">Edit Name</button>
 				</div>
 			</div>
 		</div>
+
+		<dialog id="changeNameDialog" popover>
+			<div class="closeButtonContainer">
+				<button id="closeButton" popovertarget="changeNameDialog" popovertargetaction="hide" onclick="changeNameDialog.close()">X</button>
+			</div>
+			<form class="changeNameForm">
+				<fieldset>
+					<label for="newName">New Name</label>
+					<input type="text" id="newName" name="newName" placeholder="Lisa" required>
+				</fieldset>
+				<button id="submitButton">Set new name</button>
+			</form>
+		</dialog>
 
 	</div>
 </body>
