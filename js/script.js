@@ -136,6 +136,9 @@ const GameController = (() => {
 	};
 
 	function playRound(row, column) {
+		// Store currentMark
+		let markToPlace = currentPlayer.mark;
+		// Check if game is over before proceeding
 		if (gameOver) {
 			return { status: "over" };
 		};
@@ -153,13 +156,13 @@ const GameController = (() => {
 			currentPlayer.addWin();
 			// Finish function execution
 			// since there is a winner
-			return { status: "win", player:  currentPlayer.name };
+			return { status: "win", mark: markToPlace, player:  currentPlayer.name };
 		};
 		// If there is no winner, check wether the board
 		// is full to confirm wether there is a tie
 		if (Gameboard.isFull()) {
 			gameOver = true;
-			return { status: "tie" };
+			return { status: "tie", mark: markToPlace };
 		}
 		// If the game is not over, the move was valid
 		// Set current player to be the next one and
@@ -169,7 +172,9 @@ const GameController = (() => {
 		} else {
 			currentPlayer = playerOne;
 		};
-		return { status: "continue" };
+		// If placing the mark is valid, return 'continue'
+		// and the place to mark
+		return { status: "continue", mark: markToPlace, nextPlayer: currentPlayer.name };
 	};
 
 	// Function to reset game
