@@ -251,3 +251,15 @@ function reset() {
 	nextPlayerCell.textContent = "Player One";
 };
 
+
+//=== Event listeners ===//
+
+// Listener to mark attemps in each cell
+const cells = document.querySelectorAll(".cell");
+cells.forEach(element => {
+	element.addEventListener('click', (event) => play(event))
+});
+
+// Listener to reset game after pressing the 'Reset Game' button
+const reserGameButton = document.getElementById("resetGame");
+reserGameButton.addEventListener('click', () => reset());
