@@ -245,7 +245,7 @@ function reset() {
 	const cells = document.querySelectorAll(".cell");
 	const nextPlayerCell = document.getElementById("nextPlayer");
 	const resultValue = document.getElementById("resultValue");
-	Gameboard.resetBoard();
+	GameController.resetGame();
 	cells.forEach(element => {
 		element.textContent = "";
 	});
