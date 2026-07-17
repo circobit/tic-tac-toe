@@ -221,6 +221,14 @@ function renderEndGame(result) {
 	};
 };
 
+// Render players names
+function renderPlayerNames() {
+	const player1Name = document.getElementById("player1Name");
+	const player2Name = document.getElementById("player2Name");
+	player1Name.textContent = GameController.playerOne.name;
+	player2Name.textContent = GameController.playerTwo.name;
+};
+
 // Function to play
 function play(event) {
 	// Get coordinates
@@ -244,7 +252,6 @@ function play(event) {
 	// in cell and update who's next
 	renderPlay(event.target, result.mark, result.nextPlayer);
 };
-
 
 // Function to reset game
 function reset() {
