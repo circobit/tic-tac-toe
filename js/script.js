@@ -239,3 +239,15 @@ function play(event) {
 	renderPlay(event.target, result.mark, result.nextPlayer);
 };
 
+
+// Function to reset game
+function reset() {
+	const cells = document.querySelectorAll(".cell");
+	const nextPlayerCell = document.getElementById("nextPlayer");
+	Gameboard.resetBoard();
+	cells.forEach(element => {
+		element.textContent = "";
+	});
+	nextPlayerCell.textContent = "Player One";
+};
+
