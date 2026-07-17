@@ -264,20 +264,20 @@ body {
 	justify-content: right;
 }
 
-.changeNameForm fieldset {
+#changeNameForm fieldset {
 	display: flex;
 	flex-direction: column;
 	border: none;
 	color: white;
 }
 
-.changeNameForm input {
+#changeNameForm input {
 	border: 1px solid white;
 	border-radius: 10px;
 	padding-left: 1rem;
 }
 
-.changeNameForm button {
+#changeNameForm button {
 	background-color: #590e1d;
 	border: 1px solid #590e1d;
 	border-radius: 10px;
