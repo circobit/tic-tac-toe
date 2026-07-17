@@ -46,12 +46,12 @@
 				<div class="player" id="player1">
 					<span id="player1Name">Player 1 </span>
 					<span id="player1Score">0</span>
-					<button class="changeName" data-target="player1" popovertarget="changeNameDialog" onclick="changeNameDialog.showModal()">Edit Name</button>
+					<button class="changeName" popovertarget="changeNameDialog" onclick="changeNameForm.dataset.player = 'player1'; changeNameDialog.showModal()">Edit Name</button>
 				</div>
 				<div class="player" id="player2">
 					<span id="player2Name">Player 2 </span>
 					<span id="player2Score">0</span>
-					<button class="changeName" data-target="player2" popovertarget="changeNameDialog" onclick="changeNameDialog.showModal()">Edit Name</button>
+					<button class="changeName" popovertarget="changeNameDialog" onclick="changeNameForm.dataset.player = 'player2'; changeNameDialog.showModal()">Edit Name</button>
 				</div>
 			</div>
 		</div>
