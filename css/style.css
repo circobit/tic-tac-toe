@@ -233,7 +233,7 @@ body {
 		cursor: pointer;
 	}
 
-	.resetGame:hover {
+	#resetGame:hover {
 		background-color: #aee6cf;
 		border: 5px solid #aee6cf;
 		color: #dd4765;
