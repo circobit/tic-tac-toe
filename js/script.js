@@ -192,3 +192,25 @@ const GameController = (() => {
 
 	return { playRound, resetGame };
 })();
+
+
+//=== Helpers for event listeners ===//
+
+// Function to render play move
+function renderPlay(cell, mark, nextPlayer) {
+	const nextPlayerCell = document.getElementById("nextPlayer");
+	cell.textContent = mark;
+	nextPlayerCell.textContent = nextPlayer;
+};
+
+// Function to render win or tie
+function renderEndGame(result) {
+	// Get elements to change text on
+	const resultValue = document.getElementById("resultValue");
+	// Show game final result
+	if (result.status == "tie") {
+		resultValue.textContent = "It's a tie!";
+	} else {
+		resultValue.textContent = `${result.player} won!`;
+	};
+};
