@@ -141,21 +141,26 @@ body {
 }
 
 
-/* Round Result */
+/* Next Player and Round Result */
 
-.roundResult {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	background-color: #E3D081;
-	border: 1px solid #E3D081;
-	border-radius: 15px;
+.nextPlayerAndResult {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
 	width: 17rem;
-	height: 4rem;
+	gap: 1rem;
 }
 
-.roundResultTitle {
+.nextPlayerAndResult div {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	background-color: #E3D081;
+	border: 5px solid #E3D081;
+	border-radius: 15px;
+	line-height: 1;
+}
+
+.nextPlayerAndResultTitle {
 	font-weight: bold;
 }
 
