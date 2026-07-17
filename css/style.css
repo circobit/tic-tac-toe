@@ -284,6 +284,12 @@ body {
 	color: white;
 }
 
+/* Blur background while dialog is open */
+
+dialog::backdrop {
+        backdrop-filter: blur(1px);
+}
+
 
 /* Hover highlight */
 
