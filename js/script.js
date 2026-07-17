@@ -244,11 +244,13 @@ function play(event) {
 function reset() {
 	const cells = document.querySelectorAll(".cell");
 	const nextPlayerCell = document.getElementById("nextPlayer");
+	const resultValue = document.getElementById("resultValue");
 	Gameboard.resetBoard();
 	cells.forEach(element => {
 		element.textContent = "";
 	});
 	nextPlayerCell.textContent = "Player One";
+	resultValue.textContent = "";
 };
 
 
