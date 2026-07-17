@@ -190,7 +190,7 @@ const GameController = (() => {
 		gameOver = false;
 	};
 
-	return { playRound, resetGame };
+	return { playRound, resetGame, playerOne, playerTwo };
 })();
 
 
@@ -207,10 +207,16 @@ function renderPlay(cell, mark, nextPlayer) {
 function renderEndGame(result) {
 	// Get elements to change text on
 	const resultValue = document.getElementById("resultValue");
+	const player1Score = document.getElementById("player1Score");
+	const player2Score = document.getElementById("player2Score");
 	// Show game final result
 	if (result.status == "tie") {
 		resultValue.textContent = "It's a tie!";
 	} else {
+		// Update score for both users in display
+		player1Score.textContent = GameController.playerOne.getScore();
+		player2Score.textContent = GameController.playerTwo.getScore();
+		// Update the round result
 		resultValue.textContent = `${result.player} won!`;
 	};
 };
