@@ -266,6 +266,31 @@ function reset() {
 	resultValue.textContent = "";
 };
 
+// Function to change player name
+function changeName(event) {
+	// Avoid default behavior, which is to reaload the page after submit
+    event.preventDefault();
+    // Get form and player stored in the dataset
+    const form = document.getElementById("changeNameForm");
+    const player = form.dataset.player; 
+    // Get and clean value
+    const inputObj = document.getElementById("newName");
+    const newName = inputObj.value.trim();
+    // If the input field is empty on submit, do nothing
+    if (!newName) {
+		return
+	};
+    // Assign the name based on player
+    if (player === "player1") {
+        GameController.playerOne.name = newName;
+    } else {
+        GameController.playerTwo.name = newName;
+    };
+    renderPlayerNames();
+    inputObj.value = "";
+    document.getElementById("changeNameDialog").close();
+};
+
 
 //=== Event listeners ===//
 
